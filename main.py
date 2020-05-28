@@ -1,9 +1,13 @@
+from sys import argv
 from utils.linked_list import LinkedList
+
+
+script, number = argv
 
 
 if __name__ == '__main__':
     # Define value to be stored in the linked list
-    storing_value = 243
+    storing_value = int(number)
     # Get length of the number
     digits = len(str(storing_value))
     # Initialize object of linked list
@@ -13,8 +17,6 @@ if __name__ == '__main__':
         divisor = 10 ** y
         linked_list.add_node(storing_value // divisor)
         storing_value %= divisor
-    # Print the linked list
-    linked_list.print_list()
     # Reverse linked list
     linked_list.reverse_list()
     linked_list.print_list()

@@ -1,3 +1,8 @@
+import cv2
+import imageio
+import numpy as np
+
+
 class ListNode:
     """
     A class that implements a node in linked lists
@@ -96,3 +101,10 @@ class LinkedList:
             prev_node = current_node
             current_node = next_node
         self.head = prev_node
+
+    def animate_list(self):
+        """
+        Method to create gif of linked list
+        :return: nothing
+        """
+        pass

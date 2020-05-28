@@ -1,6 +1,3 @@
-import math
-
-
 class ListNode:
     """
     A class that implements a node in linked lists
@@ -83,7 +80,7 @@ if __name__ == '__main__':
     linked_list = LinkedList()
     # Store each digit of the number
     for y in range(digits - 1, -1, -1):
-        divisor = int(math.pow(10, y))
+        divisor = 10 ** y
         linked_list.add_node(storing_value // divisor)
         storing_value %= divisor
     # Print the linked list

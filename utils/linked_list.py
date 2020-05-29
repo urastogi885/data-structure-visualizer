@@ -112,10 +112,10 @@ class LinkedList:
         img.fill(255)
         current_node = self.head
         initial_pos = 35, 60
-        video_format = cv2.VideoWriter_fourcc('X', 'V', 'I', 'D')
-        video_output = cv2.VideoWriter('gifs/video_animation.avi', video_format, 2, (img_size[1], img_size[0]))
         if not os.path.exists('gifs/'):
             os.mkdir('gifs/')
+        video_format = cv2.VideoWriter_fourcc('X', 'V', 'I', 'D')
+        video_output = cv2.VideoWriter('gifs/video_animation.avi', video_format, 2, (img_size[1], img_size[0]))
         for i in range(self.size):
             cv2.putText(img, str(current_node.get_data()), (initial_pos[0] + i * img_size[0], initial_pos[1]),
                         cv2.FONT_HERSHEY_COMPLEX, 1, (0, 0, 0), 2, cv2.LINE_AA)

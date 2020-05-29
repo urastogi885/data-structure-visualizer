@@ -1,5 +1,5 @@
 import cv2
-import imageio
+import os
 import numpy as np
 
 
@@ -114,6 +114,8 @@ class LinkedList:
         initial_pos = 35, 60
         video_format = cv2.VideoWriter_fourcc('X', 'V', 'I', 'D')
         video_output = cv2.VideoWriter('gifs/video_animation.avi', video_format, 2, (img_size[1], img_size[0]))
+        if not os.path.exists('gifs/'):
+            os.mkdir('gifs/')
         for i in range(self.size):
             cv2.putText(img, str(current_node.get_data()), (initial_pos[0] + i * img_size[0], initial_pos[1]),
                         cv2.FONT_HERSHEY_COMPLEX, 1, (0, 0, 0), 2, cv2.LINE_AA)
@@ -127,4 +129,6 @@ class LinkedList:
             print(current_node.get_data(), end=' ')
             current_node = current_node.get_next_node()
         video_output.release()
+        os.system('ffmpeg -y -i gifs/video_animation.avi -vf "fps=5" -loop 0 gifs/linked_list.gif')
+        os.system('rm -rf gifs/video_animation.avi')
         print()

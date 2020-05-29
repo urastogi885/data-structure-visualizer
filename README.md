@@ -24,20 +24,17 @@ cd <Working directory path>
 git clone https://github.com/urastogi885/data-structure-visualizer
 ```
 
-## Linked Lists
-
 - Go into the project directory:
 ```
-cd <Working directory path>/data-structure-visualizer/
+cd data-structure-visualizer/
 ```
+
+## Linked Lists
 
 - Run:
 ```
 python3 main.py <number to store>
-```
-
-- For instance:
-```
+For instance:
 python3 main.py 1205
 ```
 

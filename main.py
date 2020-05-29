@@ -19,4 +19,4 @@ if __name__ == '__main__':
         storing_value %= divisor
     # Reverse linked list
     linked_list.reverse_list()
-    linked_list.print_list()
+    linked_list.animate_list()

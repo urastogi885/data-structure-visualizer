@@ -107,4 +107,24 @@ class LinkedList:
         Method to create gif of linked list
         :return: nothing
         """
-        pass
+        img_size = 100, self.size * 100, 3
+        img = np.zeros(img_size, dtype=np.uint8)
+        img.fill(255)
+        current_node = self.head
+        initial_pos = 35, 60
+        video_format = cv2.VideoWriter_fourcc('X', 'V', 'I', 'D')
+        video_output = cv2.VideoWriter('gifs/video_animation.avi', video_format, 2, (img_size[1], img_size[0]))
+        for i in range(self.size):
+            cv2.putText(img, str(current_node.get_data()), (initial_pos[0] + i * img_size[0], initial_pos[1]),
+                        cv2.FONT_HERSHEY_COMPLEX, 1, (0, 0, 0), 2, cv2.LINE_AA)
+            for _ in range(2):
+                video_output.write(img)
+            if i != self.size - 1:
+                cv2.arrowedLine(img, (initial_pos[0] + i * img_size[0] + 30, initial_pos[1] - 10),
+                                (initial_pos[0] + (i + 1) * img_size[0] - 20, initial_pos[1] - 10), (0, 0, 0))
+                for _ in range(2):
+                    video_output.write(img)
+            print(current_node.get_data(), end=' ')
+            current_node = current_node.get_next_node()
+        video_output.release()
+        print()

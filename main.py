@@ -1,5 +1,5 @@
 from sys import argv
-from utils.linked_list import LinkedList
+from utils.linked_list import SinglyLinkedList
 
 
 script, number = argv
@@ -11,7 +11,7 @@ if __name__ == '__main__':
     # Get length of the number
     digits = len(str(storing_value))
     # Initialize object of linked list
-    linked_list = LinkedList()
+    linked_list = SinglyLinkedList()
     # Store each digit of the number
     for y in range(digits - 1, -1, -1):
         divisor = 10 ** y
@@ -19,4 +19,5 @@ if __name__ == '__main__':
         storing_value %= divisor
     # Reverse linked list
     linked_list.reverse_list()
+    print(linked_list)
     linked_list.animate_list()

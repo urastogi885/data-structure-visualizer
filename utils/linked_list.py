@@ -65,7 +65,7 @@ class ListNode:
         self.prev_node = val
 
 
-class LinkedList:
+class SinglyLinkedList:
     """
     A class that implements singly-linked list
     """

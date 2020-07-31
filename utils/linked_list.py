@@ -8,14 +8,16 @@ class ListNode:
     A class that implements a node in linked lists
     """
 
-    def __init__(self, value=0, next_node=None):
+    def __init__(self, value=0, next_node=None, prev_node=None):
         """
         Method to initialize a linked-list node
         :param value: value of the linked-list node
         :param next_node: next linked-list node
+        :param prev_node: previous linked-list node
         """
         self.value = value
         self.next_node = next_node
+        self.prev_node = prev_node
 
     def get_data(self):
         """
@@ -47,11 +49,27 @@ class ListNode:
         """
         self.next_node = val
 
+    def get_prev_node(self):
+        """
+        Method to get value of previous node
+        :return: value of previous node
+        """
+        return self.prev_node
+
+    def set_prev_node(self, val):
+        """
+        Method to set value of previous node
+        :param val: value of previous node
+        :return: nothing
+        """
+        self.prev_node = val
+
 
 class LinkedList:
     """
     A class that implements singly-linked list
     """
+
     def __init__(self, head=None):
         """
         Method to initialize linked list class
@@ -132,3 +150,12 @@ class LinkedList:
         os.system('ffmpeg -y -i gifs/video_animation.avi -vf "fps=5" -loop 0 gifs/linked_list.gif')
         os.system('rm -rf gifs/video_animation.avi')
         print()
+
+
+class DoublyLinkedList:
+    """
+    A class that implements a doubly-linked list
+    """
+
+    def __init__(self):
+        pass

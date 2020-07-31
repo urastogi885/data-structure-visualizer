@@ -19,14 +19,14 @@ class ListNode:
         self.next_node = next_node
         self.prev_node = prev_node
 
-    def get_data(self):
+    def get_data(self) -> int:
         """
         Method to get value of node
         :return: value of node
         """
         return self.value
 
-    def set_data(self, val):
+    def set_data(self, val: int) -> None:
         """
         Method to set value of node
         :param val: value of node
@@ -34,14 +34,14 @@ class ListNode:
         """
         self.value = val
 
-    def get_next_node(self):
+    def get_next_node(self) -> int:
         """
         Method to get value of next node
         :return: value of next node
         """
         return self.next_node
 
-    def set_next_node(self, val):
+    def set_next_node(self, val: int) -> None:
         """
         Method to set value of next node
         :param val: value of next node
@@ -49,14 +49,14 @@ class ListNode:
         """
         self.next_node = val
 
-    def get_prev_node(self):
+    def get_prev_node(self) -> int:
         """
         Method to get value of previous node
         :return: value of previous node
         """
         return self.prev_node
 
-    def set_prev_node(self, val):
+    def set_prev_node(self, val: int) -> None:
         """
         Method to set value of previous node
         :param val: value of previous node
@@ -78,14 +78,14 @@ class LinkedList:
         self.head = head
         self.size = 0
 
-    def get_size(self):
+    def get_size(self) -> int:
         """
         Method to get size of linked list
         :return: size of linked list
         """
         return self.size
 
-    def add_node(self, data):
+    def add_node(self, data: int) -> None:
         """
         Method to add node to linked list
         :param data: value of new node
@@ -95,7 +95,7 @@ class LinkedList:
         self.head = new_node
         self.size += 1
 
-    def print_list(self):
+    def print_list(self) -> None:
         """
         Method to print the entire linked list
         :return: nothing
@@ -106,7 +106,7 @@ class LinkedList:
             current_node = current_node.get_next_node()
         print()
 
-    def reverse_list(self):
+    def reverse_list(self) -> None:
         """
         Method to reverse the linked list
         :return: nothing
@@ -120,7 +120,7 @@ class LinkedList:
             current_node = next_node
         self.head = prev_node
 
-    def animate_list(self):
+    def animate_list(self) -> None:
         """
         Method to create gif of linked list
         :return: nothing
@@ -157,5 +157,45 @@ class DoublyLinkedList:
     A class that implements a doubly-linked list
     """
 
-    def __init__(self):
+    def __init__(self, head=None, tail=None):
+        """
+        Method to initialize a doubly-linked list
+        :param head: an integer to define the first number in the list
+        :param tail: an integer to define the last number in the list
+        :return: nothing
+        """
+        pass
+
+    def push(self, val: int) -> None:
+        """
+        Method to add new node at the front of the linked list
+        :param val: an integer to be added to the list
+        :return: nothing
+        """
+        pass
+
+    def insert_after(self, node: ListNode, val: int) -> None:
+        """
+        Method to add new node after an existing node in the linked list
+        :param node: node after which value has to be added in the list
+        :param val: an integer to be added to the list
+        :return: nothing
+        """
+        pass
+
+    def insert_before(self, node: ListNode, val: int) -> None:
+        """
+        Method to add new node before an existing node in the linked list
+        :param node: node before which value has to be added in the list
+        :param val: an integer to be added to the list
+        :return: nothing
+        """
+        pass
+
+    def append(self, val: int) -> None:
+        """
+        Method to add new node at the end of the linked list
+        :param val: an integer to be added to the list
+        :return: nothing
+        """
         pass

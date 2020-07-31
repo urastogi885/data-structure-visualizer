@@ -78,6 +78,18 @@ class LinkedList:
         self.head = head
         self.size = 0
 
+    def __str__(self) -> str:
+        """
+        Method to print the entire linked list
+        :return: nothing
+        """
+        current_node = self.head
+        while current_node:
+            print(current_node.value, end=' ')
+            current_node = current_node.get_next_node()
+        print()
+        return ''
+
     def get_size(self) -> int:
         """
         Method to get size of linked list
@@ -94,17 +106,6 @@ class LinkedList:
         new_node = ListNode(data, self.head)
         self.head = new_node
         self.size += 1
-
-    def print_list(self) -> None:
-        """
-        Method to print the entire linked list
-        :return: nothing
-        """
-        current_node = self.head
-        while current_node:
-            print(current_node.value, end=' ')
-            current_node = current_node.get_next_node()
-        print()
 
     def reverse_list(self) -> None:
         """
@@ -144,7 +145,6 @@ class LinkedList:
                                 (initial_pos[0] + (i + 1) * img_size[0] - 20, initial_pos[1] - 10), (0, 0, 0))
                 for _ in range(2):
                     video_output.write(img)
-            print(current_node.get_data(), end=' ')
             current_node = current_node.get_next_node()
         video_output.release()
         os.system('ffmpeg -y -i gifs/video_animation.avi -vf "fps=5" -loop 0 gifs/linked_list.gif')
